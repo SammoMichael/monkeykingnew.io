@@ -197,7 +197,6 @@ document.getElementById('start').addEventListener('click', function () {
     }
 
     function updateEntities(dt) {
-        debugger
         player.sprite.update(dt);
         player2.sprite.update(dt);
 
@@ -306,8 +305,6 @@ document.getElementById('start').addEventListener('click', function () {
             }
         }
         for (let i = 0; i < peaches.length; i++) {
-            debugger
-
             peaches[i].pos[0] -= peachesSpeed * dt;
 
             peaches[i].sprite.update(dt);
@@ -343,15 +340,12 @@ document.getElementById('start').addEventListener('click', function () {
     function checkCollisions() {
         checkPlayerBounds();
         // checkBossBounds();
-        debugger
         for (let i = 0; i < peaches.length; i++) {
             let pos = peaches[i].pos;
             let size = peaches[i].sprite.size;
             let pos2 = player.pos;
             let size2 = player.sprite.size;
-            debugger
             if (boxCollides(pos, size, pos2, size2)) {
-                debugger
                 peaches.splice(i, 1);
                 // if (!gameOver) {
                 window.health.innerHTML -= -10;
@@ -464,13 +458,9 @@ document.getElementById('start').addEventListener('click', function () {
     // }
     window.angle = -90
     function render() {
-        debugger
-        // ctx.fillStyle = terrainPattern;
-        // ctx.fillRect(0, 0, canvas.width, canvas.height);
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         window.angle -= 10;
         if (!isGameOver) {
-            debugger
             if (monkey) {
                 renderEntity(player);
             } else {

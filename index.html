@@ -3,7 +3,6 @@
   <head>
     <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
     <script>
-      // Initialize Firebase
       var config = {
         apiKey: "AIzaSyBcu3DjQ_O2q1WRgYkXRm75ZfiBVAp1VI4",
         authDomain: "monkey-king-game.firebaseapp.com",
@@ -44,20 +43,20 @@
     </video>
     <div id="game-over-overlay"></div>
     <div id="game-over">
-      <h1>GAME OVER</h1>
+      <img class="xuanzang" src="img/xuanzang.png" alt="Try Again">
+      <h1 class="pep-talk">Don't Give Up My Monkey!</h1>
       <button id="play-again">Play Again</button>
     </div>
     <div class="wrapper">
       <div id="instructions">
-        <div>
-          move with <span >arrows</span> or <span >wasd</span>
+        <div class="directions">
+          Arrows <span ></span><span >to Move Space to Shoot</span>
         </div>
         <div>
-          shoot with <span >space</span>
+             <span ></span>
         </div>
       </div>
       <div id="health">
-      
       </div>
         <div id="score"></div>
       </div>
@@ -70,7 +69,7 @@
         <span id="links">
           <a class="gitHub" href='https://github.com/SammoMichael'><i class="fab fa-github-alt"></i>Github</a></a>
           <a classs="linkedIn" href='https://www.linkedin.com/in/samuelamichael/'><i class="fab fa-linkedin"></i>LinkedIn</a> 
-          <a class="bio" href=''><i class="fas fa-ghost"></i>Bio</a>
+          <a class="bio" href='https://sammomichael.github.io/github.io/'><i class="fas fa-ghost"></i>Bio</a>
         </span>
         <script type="text/javascript" src="./js/resources.js"></script>
         <script type="text/javascript" src="./js/input.js"></script>
@@ -78,11 +77,6 @@
         <script type="text/javascript" src="./js/app.js"></script>
         <div id="joystick">
         <span id="circle" style="display:none;">
-          <!-- <button id="up">UP</button>
-          <button id="down">DOWN</button>
-          <button id="left">LEFT</button>
-          <button id="right">RIGHT</button>
-          <button id="fire">FIRE</button> -->
         </span>
         <div id="circle2" style="display:none;"></div>
         <div id="circle3" style="display:none;"></div>
@@ -90,7 +84,5 @@
         <div id="circle5" style="display:none;"></div>
       </div id="joystick">
         <script> window.touch ? document.getElementById('joystick').style="block" : null </script>
-        
-          
       </body>
 </html>
