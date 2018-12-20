@@ -11,6 +11,21 @@ a {
     color: brown;
 }
 
+#leaderboard {
+    background: rgb(12, 30, 110);
+    color:white;
+    font-size: xx-large;
+    margin: auto;
+    width: 400px;
+    height: 480px;
+    position: absolute;
+    top: 0;
+    left: 65%;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    display: none;
+}
 #circle:hover {
     background-color: white;
 }
@@ -94,8 +109,10 @@ a {
 
 }
 #links {
+    position: relative;
     z-index: 1;
     text-decoration: none;
+    /* bottom: 5px; */
 }
 #start {
     top: 50px;
@@ -104,7 +121,7 @@ a {
 }
 #links {
     left: 30%;
-    bottom: 10%;
+    bottom: 1%;
     position: absolute;
     color: brown;
     font-size: -webkit-xxx-large;
@@ -181,7 +198,7 @@ canvas {
 
 #game-over, #game-over-overlay {
     margin: auto;
-    width: 800px;
+    width: 500px;
     height: 700px;
     position: absolute;
     top: 0;
@@ -207,7 +224,7 @@ canvas {
 #play-again {
     position: relative;
     z-index: 10;
-    bottom: 190px;
+    bottom: 200px;
 }
 .pep-talk {
     position: relative;
@@ -263,11 +280,23 @@ canvas {
 #game-start button {
     font-size: 1.5em;
 }
-.directions {
-    left: 30px;
+.author {
     position: relative;
-    bottom: 50px;
+    left: 100px;
+}
+.credits {
+    position: relative;
+    right: 50px;
+}
+.directions {
+    width: 1000px;
+    font-size: x-large;
+    /* height: 50px; */
+    left: 450px;
+    position: relative;
+    top: -65px;
     color: white;
+    font-family: 'Noto Serif TC', serif;
 }
 .health-bar {
   -webkit-box-sizing: border-box;
@@ -281,7 +310,7 @@ canvas {
   -moz-border-radius: 5px;
   border-radius: 5px;
   position: relative;
-  left: 600px;
+  left: 550px;
   border-radius: 8px;
 
 }
@@ -291,7 +320,7 @@ canvas {
   background: #c54;
   height: 30px;
   position: relative;
-  left: 600px;
+  left: 550px;
   border-radius: 8px;
   
   transition: width .5s linear;

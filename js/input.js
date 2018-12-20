@@ -1,4 +1,4 @@
-(() => {
+window.onload = (() => {
     var pressedKeys = {};
     function setKey(event, status) {
         var code = event.keyCode;
@@ -63,33 +63,94 @@
         // console.log(pressedKeys[key]);
         // console.log(key);
     }
-    document.addEventListener('pointerdown', (e) => {
-        setKey(e, true);
-    });
-    document.addEventListener('keydown', (e) => {
-        setKey(e, true);
-    });
-    document.addEventListener('pointerup', (e) => {
-        pressedKeys = {};
-    });
-    document.addEventListener('touchstart', (e) => {
-        setKey(e, true);
-    });
-    document.addEventListener('touchend', (e) => {
-        pressedKeys = {};
-    });
-    // document.addEventListener('pointermove', (e) => {
-    //     setKey(e, true);
-    // });
-    document.addEventListener('keyup', (e) => {
-        setKey(e, false);
-    });
-    window.addEventListener('blur', () => {
-        pressedKeys = {};
-    });
-    window.input = {
-        isDown: (key) => {
-            return pressedKeys[key.toUpperCase()];
-        }
-    };
+    document.addEventListener("mousemove", (event) => {
+        event.preventDefault;
+        var player = window.player;
+            if (event.offsetX > 1500 && player) {
+                player.pos[0] = 1500;
+            } else if (player) {
+                player.pos[0] = event.offsetX;
+            }
+
+        if (event.offsetY > 900 && player) {
+                player.pos[1] = 900;
+        } else if (player) {
+                player.pos[1] = event.offsetY;
+            }
+
+        });
+    document.addEventListener("pointermove", (event) => {
+            event.preventDefault;
+            var player = window.player;
+        if (event.offsetX > 1450 && player) {
+
+                player.pos[0] = 1450;
+        } else if (player){
+                player.pos[0] = event.offsetX;
+            }
+
+        if (event.offsetY > 850 && player) {
+                player.pos[1] = 850;
+        } else if (player){
+                player.pos[1] = event.offsetY;
+            }
+
+        });
+    document.addEventListener("touchmove", (event) => {
+            event.preventDefault;
+        var player = window.player;
+
+        if (event.offsetX > 1450 && player) {
+            var player = window.player;
+
+                player.pos[0] = 1450;
+            } else if(player) {
+                player.pos[0] = event.offsetX;
+            }
+
+        if (event.offsetY > 850 && player) {
+                player.pos[1] = 850;
+        } else if (player) {
+                player.pos[1] = event.offsetY;
+            }
+
+        });
+
+
+        document.addEventListener('mousedown', (e) => {
+            // console.log('mouse');
+            // setKey(e, true);
+        });
+        
+        document.addEventListener('pointerdown', (e) => {
+            // console.log('pointer');
+            setKey(e, true);
+        });
+        document.addEventListener('keydown', (e) => {
+            setKey(e, true);
+        });
+        document.addEventListener('pointerup', (e) => {
+            pressedKeys = {};
+        });
+        document.addEventListener('touchstart', (e) => {
+            setKey(e, true);
+        });
+        document.addEventListener('touchend', (e) => {
+            pressedKeys = {};
+        });
+        // document.addEventListener('pointermove', (e) => {
+            //     setKey(e, true);
+            // });
+            document.addEventListener('keyup', (e) => {
+                setKey(e, false);
+            });
+            window.addEventListener('blur', () => {
+                pressedKeys = {};
+            });
+            window.input = {
+                isDown: (key) => {
+                    pressedKeys['SPACE'] = true;
+                    return pressedKeys[key.toUpperCase()];
+            }
+        };
 })();

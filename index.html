@@ -12,7 +12,18 @@
         messagingSenderId: "691583265310"
       };
       firebase.initializeApp(config);
-    </script>
+      </script>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131044622-1"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-131044622-1');
+      </script>
+    
+      <link href="https://fonts.googleapis.com/css?family=Noto+Serif+TC" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="icon" href="./img/monkey-king-big3.png" type="image/gif">
     <meta charset="utf-8">
@@ -24,6 +35,11 @@
     <link rel="stylesheet" href="./css/app.css">
   </head>
   <body>
+      <!-- <script type="text/javascript">
+      if (!gameOver || document.getElementById('game-over').style.display === 'block') {
+        document.body.style.cursor = 'none';
+      }
+      </script> -->
     <div id="health-bar" class="health-bar" data-total="1000" data-value="1000"></div>
     <div id="bar" class="bar" style="width: 100%;"></div>
     <!-- <div id="game-start-overlay">
@@ -32,7 +48,7 @@
       <button id="start">Start Game</button>
       <div></div>
       <span class="caption-span">
-      <img id='img' class='img' src="./img/monkey-king-big1.png" alt="bg" />Save the Fruit Flower Cave from an army of
+      <img id='img' class='img' src="./img/monkey-king-big1.png" alt="bg" />Save the Flower Fruit Cave from an army of
         evil monkeys!</span>
     </div>
     <div id="container">
@@ -41,6 +57,28 @@
     <video id="video" class="video" autoplay muted loop id="myVideo">
       <source src="https://media.giphy.com/media/13bGgH9VnEDsuA/giphy.mp4" type="video/mp4">
     </video>
+    <dialog>
+      <p>Enter your name!</p>
+      <input type="text" id="return_value" value="" placeholder="Sun Wukong">
+      <button id="close">Enter</button>
+    </dialog>
+    <!-- <button style="visibility: hidden"; id="show">Open Dialog!</button> -->
+    <div id="leaderboard">High Scores
+      <br>
+
+      <span id="1"></span>
+      <br>
+      <span id="2"></span>
+      <br>
+
+      <span id="3"></span>
+      <br>
+
+      <span id="4"></span>
+      <br>
+
+      <span id="5"></span>
+    </div>
     <div id="game-over-overlay"></div>
     <div id="game-over">
       <img class="xuanzang" src="img/xuanzang.png" alt="Try Again">
@@ -48,9 +86,10 @@
       <button id="play-again">Play Again</button>
     </div>
     <div class="wrapper">
-      <div id="instructions">
+      <div id="instructions"> 
         <div class="directions">
-          Arrows <span ></span><span >to Move Space to Shoot</span>
+         <!-- <img src="img/monkey-king-big3.png" alt="monkey" srcset=""> -->
+           <span class="credits" >孫悟空 Monkey King Game</span><span class="keys" >Eat the peaches and avoid the birds!</span><span class="author"> By Samuel Michael </span>
         </div>
         <div>
              <span ></span>
