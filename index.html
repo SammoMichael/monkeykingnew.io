@@ -12,116 +12,118 @@
         messagingSenderId: "691583265310"
       };
       firebase.initializeApp(config);
-      </script>
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131044622-1"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-131044622-1');
-      </script>
-    
-      <link href="https://fonts.googleapis.com/css?family=Noto+Serif+TC" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131044622-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'UA-131044622-1');
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+TC" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="icon" href="./img/monkey-king-big3.png" type="image/gif">
     <meta charset="utf-8">
     <title>Monkey King Game</title>
-    <meta name="description" content="">
+    <meta name="description" content="Monkey King fights against an army of demon monkeys in the clouds">
+    <meta name="keywords" content="monkey king, game">
+    <meta name="author" content="Samuel Michael">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
       crossorigin="anonymous">
     <link rel="stylesheet" href="./css/app.css">
   </head>
-  <body>
-      <!-- <script type="text/javascript">
-      if (!gameOver || document.getElementById('game-over').style.display === 'block') {
-        document.body.style.cursor = 'none';
-      }
-      </script> -->
-    <div id="health-bar" class="health-bar" data-total="1000" data-value="1000"></div>
-    <div id="bar" class="bar" style="width: 100%;"></div>
-    <!-- <div id="game-start-overlay">
-    </div> -->
-    <div id="game-start">
-      <button id="start">Start Game</button>
-      <div></div>
-      <span class="caption-span">
-      <img id='img' class='img' src="./img/monkey-king-big1.png" alt="bg" />Save the Flower Fruit Cave from an army of
-        evil monkeys!</span>
-    </div>
-    <div id="container">
-      <canvas id="gameCanvas" ></canvas>
-    </div>
-    <video id="video" class="video" autoplay muted loop id="myVideo">
-      <source src="https://media.giphy.com/media/13bGgH9VnEDsuA/giphy.mp4" type="video/mp4">
-    </video>
-    <dialog>
-      <p>Enter your name!</p>
-      <input type="text" id="return_value" value="" placeholder="Sun Wukong">
-      <button id="close">Enter</button>
-    </dialog>
-    <!-- <button style="visibility: hidden"; id="show">Open Dialog!</button> -->
-    <div id="leaderboard">High Scores
-      <br>
-
-      <span id="1"></span>
-      <br>
-      <span id="2"></span>
-      <br>
-
-      <span id="3"></span>
-      <br>
-
-      <span id="4"></span>
-      <br>
-
-      <span id="5"></span>
-    </div>
-    <div id="game-over-overlay"></div>
-    <div id="game-over">
-      <img class="xuanzang" src="img/xuanzang.png" alt="Try Again">
-      <h1 class="pep-talk">Don't Give Up My Monkey!</h1>
-      <button id="play-again">Play Again</button>
-    </div>
-    <div class="wrapper">
-      <div id="instructions"> 
-        <div class="directions">
-         <!-- <img src="img/monkey-king-big3.png" alt="monkey" srcset=""> -->
-           <span class="credits" >孫悟空 Monkey King Game</span><span class="keys" >Eat the peaches and avoid the birds!</span><span class="author"> By Samuel Michael </span>
-        </div>
-        <div>
-             <span ></span>
-        </div>
-      </div>
-      <div id="health">
-      </div>
-        <div id="score"></div>
-      </div>
-        <audio id="attack">
-          <source src="./audio/shoot_attack.mp3" type="audio/mp3">
-        </audio>
-        <audio id="ambush">
-          <source loop src="./audio/ambush.mp3" type="audio/mp3">
-        </audio>
+  <body >
+    <div id="frame">
+      <div id=nav-wrapper>
+          <!-- <img src="./img/frame4.png" alt="frame"> -->
         <span id="links">
           <a class="gitHub" href='https://github.com/SammoMichael'><i class="fab fa-github-alt"></i>Github</a></a>
-          <a classs="linkedIn" href='https://www.linkedin.com/in/samuelamichael/'><i class="fab fa-linkedin"></i>LinkedIn</a> 
-          <a class="bio" href='https://sammomichael.github.io/github.io/'><i class="fas fa-ghost"></i>Bio</a>
+          <a class="linkedIn" href='https://www.linkedin.com/in/samuelamichael/'><i class="fab fa-linkedin"></i>LinkedIn</a>
+          <a class="bio" href='https://sammomichael.github.io/'><i class="fas fa-ghost"></i>Bio</a>
         </span>
-        <script type="text/javascript" src="./js/resources.js"></script>
-        <script type="text/javascript" src="./js/input.js"></script>
-        <script type="text/javascript" src="./js/sprite.js"></script>
-        <script type="text/javascript" src="./js/app.js"></script>
-        <div id="joystick">
-        <span id="circle" style="display:none;">
-        </span>
-        <div id="circle2" style="display:none;"></div>
-        <div id="circle3" style="display:none;"></div>
-        <div id="circle4" style="display:none;"></div>
-        <div id="circle5" style="display:none;"></div>
-      </div id="joystick">
-        <script> window.touch ? document.getElementById('joystick').style="block" : null </script>
+
+
+
+        <div id="instructions">
+          <div class="directions">
+            <div id="health">
+            </div>
+          </div>
+          <!-- <div class="wrapper">
+          </div> -->
+          <span class="credits">孫悟空 </span>
+          <span class="keys">Eat the peaches and avoid the birds!</span>
+          <span id="score"></span>
+          <span id="bar" class="bar" style="width: 100%;"></span>
+        <span class="author"> &copy; Samuel Michael </span>
+       
+      </div>
+      
+  </div>
+  <div id="canvas-wrapper">
+    <canvas id="canvas" height="900" width="1500"></canvas>
+  </div>
+      <div id="game-start">
+        <img id='img' class='img' src="./img/monkey-king-big1.png" alt="bg" />
+        <button id="start">Start Game</button>
+        <span class="caption-span">
+          <br>Save the Monkey King from an army of
+          evil monkeys!</span>
+      </div>
+      <div id="container">
+        <canvas id="gameCanvas" ></canvas>
+      </div>
+      <video id="video" class="video" autoplay muted loop id="myVideo">
+        <source src="https://media.giphy.com/media/13bGgH9VnEDsuA/giphy.mp4" type="video/mp4">
+      </video>
+      <dialog>
+        <p>Enter your name!</p>
+        <input type="text" id="return_value" value="" placeholder="Sun Wukong">
+        <button id="close">Enter</button>
+      </dialog>
+      <!-- <button style="visibility: hidden"; id="show">Open Dialog!</button> -->
+      <div id="leaderboard">       ****High Scores****
+        <hr>
+        <span id="1"></span>
+        <br>
+        <span id="2"></span>
+        <br>
+        <span id="3"></span>
+        <br>
+        <span id="4"></span>
+        <br>
+        <span id="5"></span>
+      </div>
+      <div id="game-over-overlay"></div>
+      <div id="game-over">
+        <img class="xuanzang" src="img/xuanzang.png" alt="Try Again">
+        <h1 class="pep-talk">Don't Give Up My Monkey!</h1>
+        <button id="play-again">Play Again</button>
+      </div>
+      
+          <audio id="attack">
+            <source src="./audio/shoot_attack.mp3" type="audio/mp3">
+          </audio>
+          <audio id="ambush">
+            <source loop src="./audio/ambush.mp3" type="audio/mp3">
+          </audio>
+          
+          
+          <script type="text/javascript" src="./js/resources.js"></script>
+          <script type="text/javascript" src="./js/input.js"></script>
+          <script type="text/javascript" src="./js/sprite.js"></script>
+          <script type="text/javascript" src="./js/app.js"></script>
+          <!-- <div id="joystick">
+          <span id="circle" style="display:none;">
+          </span>
+          <div id="circle2" style="display:none;"></div>
+          <div id="circle3" style="display:none;"></div>
+          <div id="circle4" style="display:none;"></div>
+          <div id="circle5" style="display:none;"></div>
+        </div id="joystick"> -->
+          <!-- <script> window.touch ? document.getElementById('joystick').style="block" : null </script> -->
+        </div>
       </body>
 </html>

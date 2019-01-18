@@ -42,11 +42,24 @@ if (window.touch) {
     var bar = document.getElementById('bar').style.width;
 }
 var barValue = document.getElementById('bar').style.width.slice(0, -1);
-var canvas = document.createElement("canvas");
+var canvas = document.createElement('canvas');
+canvas.setAttribute('id', 'canvas');
+    var canvas = document.getElementById("canvas");
+    canvas.width = canvas.style.width;
+    canvas.height = canvas.style.height;
+
 var ctx = canvas.getContext("2d");
-canvas.width = 1500;
-canvas.height = 900;
-document.body.appendChild(canvas);
+// var canstyle = document.getElementById('canvas').style;
+// canstyle.width ? canvas.width = canstyle.width : null;
+// canstyle.width ? canvas.height = canstyle.width : null;
+// canvas.width = 1500;
+// canvas.height = 900;
+
+console.log(canvas.style);
+canvas.width = canvas.clientWidth;
+canvas.height = canvas.clientHeight;
+var frame = document.getElementById('frame');
+frame.appendChild(canvas);
 const video = () => {
     var canvas = document.getElementById('canvas');
     var ctx = canvas.getContext('2d');
@@ -156,7 +169,7 @@ var fireballSpeed = 1000;
 var bossesSpeed = 200;
 var enemySpeed = 150;
 var peachesSpeed = 100;
-window.bar.style.width = (window.health.innerHTML + "%");
+window.bar.style.width = (window.health.innerHTML + "%") ;
 function update(dt) {
     // end spin transformation
 if (window.transformTime - Date.now() <= -2000) {
@@ -431,13 +444,15 @@ function checkCollisions() {
         var size = bosses[k].sprite.size;
         if (boxCollides(bosses[k].pos, bosses[k].sprite.size, player.pos, player.sprite.size)) {
             bosses[k].sprite.url = 'img/bluebird2.png'
-            setTimeout(function () { bosses[0].sprite.url = 'img/bluebird.png' }, 500);
+            if (typeof (bosses[k].sprite.url) !== 'undefined') {
+            setTimeout(function () { bosses[0].sprite.url ? bosses[0].sprite.url = 'img/bluebird.png' : null }, 500);
             // console.log('ouch');
+            }
             if (window.health.innerHTML <= 0) {
                 gameOver();
             } else {
                 if (monkey) {
-                    window.health.innerHTML -= 10;
+                    window.health.innerHTML -= 2;
                 }
                 else if
                 (window.health.innerHTML <= 0) {
@@ -688,8 +703,8 @@ function gameOver() {
                 if (e.keyCode === 13) {
                     var value = document.querySelector('#return_value').value;
                     var name = value;
-                    if (name === null) {
-                        name = "anonymous"
+                    if (name === null || name === "") {
+                        name = "Sun Wukong"
                         dialog.close(value);
                     }
                     firebase.database().ref('users/').push({
@@ -714,7 +729,7 @@ function gameOver() {
                 var value = document.querySelector('#return_value').value;
                 dialog.close(value);
                 var name = value;
-                if (name === null) {
+                if (name === null || name === "") {
                     name = "Sun WuKong"
                 }
                 firebase.database().ref('users/').push({
@@ -763,8 +778,8 @@ function reset() {
     isGameOver = false;
     gameTime = 0;
     score = 0;
-    window.health.innerHTML = 100;
-    window.bar.style.width = (100 + "%");
+    window.health.innerHTML = 500;
+    window.bar.style.width = (500 + "%");
     enemies = [];
     bosses = [];
     bullets = [];
